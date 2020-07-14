@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 const assignmentSchema = new mongoose.Schema({
-  studentRegNum: {
+  /* studentRegNum: {
     type: Number,
     required: true
-  },
+  }, */
   username: {
     type: String,
     required: true

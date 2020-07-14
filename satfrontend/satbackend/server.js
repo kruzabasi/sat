@@ -1,19 +1,24 @@
 const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
 const app = express();
+const cors = require("cors");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const assignmentUrls = require("./api/assignment");
+const studentUrls = require("./api/student");
+
 dotenv.config();
-const port = 5000;
 
 mongoose.connect(
   process.env.db_con,
   { useUnifiedTopology: true, useNewUrlParser: true },
-  () => {
-    console.log("db successfully connected");
-  }
+  () => console.log("Database connected")
 );
 
-app.listen("3000", () => {
-  console.log(`sat server running on port ${port}`);
+app.use(express.json());
+app.use(cors());
+app.use("/assignment", assignmentUrls);
+app.use("/student", studentUrls);
+
+app.listen(3000, () => {
+  console.log("server is running fine");
 });
