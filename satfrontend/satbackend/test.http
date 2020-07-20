@@ -1,6 +1,8 @@
-POST http://localhost:3000/student/create http/1.1
+POST http://localhost:3000/assignment/create http/1.1
 Content-Type: application/json
 
 {
-   "username":"johnmakama"
+   "username":"Abasiono",
+   "assignmentReport":"Caligraphy",
+   "timeSubmited":2000
 }

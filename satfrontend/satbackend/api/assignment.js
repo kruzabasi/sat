@@ -17,7 +17,7 @@ router
     const createdAssignment = new assignmentData({
       username: req.body.username,
       assignmentReport: req.body.assignmentReport,
-      timeSubmitted: req.body.timeSubmitted
+      timeSubmited: req.body.timeSubmited
     });
     createdAssignment
       .save()
@@ -54,7 +54,7 @@ router
       .then(assignment => {
         assignment.username = req.body.username;
         assignment.assignmentReport = req.body.assignmentReport;
-        assignment.timeSubmitted = req.body.timeSubmitted;
+        assignment.timeSubmited = req.body.timeSubmited;
 
         assignment.save().then(() => {
           res.json("Exercise Updated");
